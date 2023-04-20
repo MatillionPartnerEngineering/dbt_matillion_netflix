@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: netflix_source
+    database: "{{ env_var('target_database') }}"
+    tables:
+      - name: netflix_search
+        loaded_at_field: updated_date
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 5
+            period: day
