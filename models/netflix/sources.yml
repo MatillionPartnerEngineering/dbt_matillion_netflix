@@ -4,7 +4,7 @@ sources:
   - name: netflix_source
     database: "{{ env_var('target_database') }}"
     tables:
-      - name: netflix_search
+      - name: stg_netflix_search
         loaded_at_field: updated_date
         freshness:
           warn_after:
