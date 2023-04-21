@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: netflix_source
+    catalog: hive_metastore
     database: "{{ env_var('target_database') }}"
     tables:
       - name: stg_netflix_search
