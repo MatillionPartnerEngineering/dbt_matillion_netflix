@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: netflix_search
+    database: "{{ env_var('target_database') }}"
+    schema: "{{ env_var('target_schema') }}"
+    tables:
+      - name: stg_netflix_structured
+        loaded_at_field: updated_date
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 5
+            period: day
