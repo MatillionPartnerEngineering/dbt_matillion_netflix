@@ -35,3 +35,5 @@ models:
         tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: VARCHAR
+        meta:
+          masking_policy: mp_encrypt_pii
