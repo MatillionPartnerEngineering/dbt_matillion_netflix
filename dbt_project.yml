@@ -41,3 +41,7 @@ models:
     # Applies to all files under models/example/
     example:
       materialized: view
+
+on-run-start:
+  - "{{ dbt_snow_mask.create_masking_policy('models')}}"
+  - "{{ dbt_snow_mask.create_masking_policy('sources')}}"
