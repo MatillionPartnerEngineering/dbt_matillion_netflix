@@ -14,3 +14,7 @@ sources:
           error_after:
             count: 5
             period: day
+        columns:
+          - name: synopsis
+            meta:
+              masking_policy: mp_encrypt_pii
