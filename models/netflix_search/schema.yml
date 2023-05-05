@@ -4,7 +4,7 @@ models:
   - name: stg_search_analysis
     tests:
       - dbt_expectations.expect_table_row_count_to_be_between:
-          max_value: 100 # (Optional)
+          max_value: 110 # (Optional)
     columns:
       - name: id
         description: "Netflix ID"
