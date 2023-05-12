@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_search_analysis
+  - name: STG_SEARCH_ANALYSIS
     tests:
       - dbt_expectations.expect_table_row_count_to_be_between:
           max_value: 110 # (Optional)
