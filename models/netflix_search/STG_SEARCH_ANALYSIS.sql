@@ -12,4 +12,9 @@ SELECT
   when imdbrating between 8 and 8.5 then 'Meh'
   when imdbrating <= 8 then 'Waste of time' end as watch_priority
 FROM {{source('netflix_search','SRC_NETFLIX_SEARCH')}}
-WHERE ID <> (select ID from {{ this }})
+
+{% if is_incremental() %}
+
+WHERE ID not in (select ID from {{ this }})
+
+{% endif %}
