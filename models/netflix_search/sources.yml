@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: netflix_search
-    database: "{{ env_var('target_database') }}"
-    schema: "{{ env_var('target_schema') }}"
+    database: "{{ env_var('source_database') }}"
+    schema: "{{ env_var('source_schema') }}"
     tables:
       - name: SRC_NETFLIX_SEARCH
         loaded_at_field: updated_date
