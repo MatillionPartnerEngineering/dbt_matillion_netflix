@@ -38,6 +38,6 @@ models:
   my_new_project:
     # Applies to all files under models/example/
     netflix_search:
-      database: {{ env_var('target_database') }}
-      schema: "{{ env_var('target_schema') }}" #formerly postdbt
+      database: "{{ env_var('target_database') }}"
+      schema: "{{ env_var('target_schema') }}" #formerly "{{ env_var('target_schema') }}"
       materialized: table
